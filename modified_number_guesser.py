@@ -29,8 +29,12 @@ def confirm():
   if user_input == "yes":
     guessANumber()
     playGame()
-  else:
+  elif user_input == "no":
+    print("Thank you for playing my number guesser game")
     quit()
+  else:
+    print("\nEnter only yes or no(quit).")
+    confirm()
 
 def playGame():
   
@@ -49,6 +53,7 @@ def playGame():
     if user_guess == random_number:
       print("you got it.")
       print("you got it in", guesses, "guesses.\n")
+      guesses = 0
       confirm()
       break
     elif user_guess > random_number:
